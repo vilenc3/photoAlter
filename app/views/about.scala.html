@@ -1,0 +1,28 @@
+@()
+
+
+@main("About") {
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div role="main" class="inner-cover cntr">
+
+            <br>
+            <div class="col-sm-12 text-center">
+                <img src="@routes.Assets.versioned("images/greeting.png")" class="img-responsive">
+                <br>
+                <br>
+
+            </div>
+            <h1 class="text-left">About us</h1>
+            <p class="text-left">Welcome to our website!<br>
+                If you are passionate about photography like us consider joining our team. We gather the best artists on the web to
+                provide clients with high quality photographs for commercial use. We offer competitive prices that will fit your budget. Our wide selection of photos will help your business thrive.
+                Still have questions? Feel free to contact us!
+
+        <p class="lead">
+            <a href="@routes.HomeController.contact()" class="btn btn-lg btn-secondary">Contact!</a  >
+        </p>
+
+        </div>
+    </div>
+
+}

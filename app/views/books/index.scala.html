@@ -1,0 +1,46 @@
+@(books: Set[Book])
+
+@main("Products"){
+    <h1>All Books:</h1>
+        @*<a href="@routes.BooksController.show(book.id)">@book.title</a>*@
+        @*<p>Price: @book.price</p>*@
+        @*<p>Author: @book.author</p>*@
+    @*}*@
+    @*<a href="@routes.BooksController.create()">Create Book</a>*@
+    <div class="container">
+            <!-- Example row of columns -->
+        <div class="row">
+            <div class="cntr">
+        @for(book <- books) {
+            <div class="col-md-4">
+                <h2 id="prod1_name">@book.title</h2>
+                <p id="prod1_desc"><img src="@book.link"></p>
+                <p id="prod1_desc">Author: @book.author</p>
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <table>
+                        <tr><td><input type="hidden" name="on0" value="Choose photo quality:">Choose photo quality:</td></tr><tr><td><select name="os0">
+                        <option value="HD">HD 1,00 PLN</option>
+                        <option value="FullHD">FullHD 2,00 PLN</option>
+                        <option value="4K">4K 3,00 PLN</option>
+                    </select> </td></tr>
+                    </table>
+                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                <div class="btn-group">
+                    <a type="button" href="@routes.BooksController.edit(book.id)" class="btn btn-secondary">Edit</a>
+                    <a type="button" href="@routes.BooksController.delete(book.id)" class="btn btn-secondary">Delete</a>
+                </div>
+            </div>
+        }
+        </div>
+        </div>
+        <hr>
+        <div class="cntr">
+            <a type="button" href="@routes.BooksController.create()" class="btn btn-secondary btn-lg">Create new book</a>
+        </div>
+
+    </div> <!-- /container -->
+}
