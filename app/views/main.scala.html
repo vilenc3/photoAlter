@@ -18,6 +18,8 @@
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.css")">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="@routes.Assets.versioned("javascripts/jquery-3.3.1.js")"></script>
+    <script src="@routes.Assets.versioned("javascripts/hello.js")"></script>
     </head>
     <body>
 
@@ -26,24 +28,31 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">YourPhoto.com</a>
+                <a class="navbar-brand not_logged_in" href="@routes.HomeController.home">Photo Alter</a>
+                <a class="navbar-brand logged_in" href="@routes.BooksController.index">Photo Alter</a>
             </div>
-            <ul class="nav navbar-nav navbar-middle">
+            <ul class="nav navbar-nav navbar-middle logged_in">
                 <li> <img src="@routes.Assets.versioned("images/home.png")" class="submenu-img"></li>
-                <li><a href="@routes.HomeController.home">Home</a></li>
+                <li><a href="@routes.BooksController.index">Home</a></li>
                 <li><img src="@routes.Assets.versioned("images/picture.png")" class="submenu-img"></li>
-                <li><a href="@routes.BooksController.index()">Pictures</a></li>
+                <li><a href="@routes.BooksController.index">Pictures</a></li>
                 <li><img src="@routes.Assets.versioned("images/about.png")" class="submenu-img"></li>
                 <li><a href="@routes.HomeController.about">About</a></li>
                 <li><img src="@routes.Assets.versioned("images/contact.png")" class="submenu-img"></li>
                 <li><a href="@routes.HomeController.contact">Contact</a></li>
 
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right not_logged_in">
+                <li><img src="@routes.Assets.versioned("images/login.png")" class="submenu-img"></li>
+                <li><a href="@routes.UserController.login">Login</a></li>
+                <li><img src="@routes.Assets.versioned("images/login.png")" class="submenu-img"></li>
+                <li><a href="@routes.UserController.create()">Register</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right logged_in">
                 <li><img src="@routes.Assets.versioned("images/cart.png")" class="submenu-img"></li>
                 <li><a href="@routes.BooksController.cart()">My Cart</a></li>
                 <li><img src="@routes.Assets.versioned("images/login.png")" class="submenu-img"></li>
-                <li><a href="@routes.UserController.login">Login</a></li>
+                <li><a href="@routes.HomeController.home">Logout</a></li>
             </ul>
         </div>
     </nav>

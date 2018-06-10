@@ -1,6 +1,7 @@
 body {
     background-color: #ddd4d4 !important;
     font-family: 'Source Sans Pro', sans-serif;
+    color: #350505;
 }
 
 main {
@@ -9,7 +10,6 @@ main {
     /* border: #AAA 1px solid; */
     width: 1280px;
     padding: 10px;
-    color: #CCCCCC;
 }
 
 form {
@@ -20,16 +20,20 @@ form {
     text-align: center;
 }
 
+nav{
+    text-transform: uppercase;
+}
+
 .cntr {
     text-align: center;
 }
 
 .btn{
-    background-color: #555555;
+    background-color: rgb(153, 136, 136);
     color: white;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -60,9 +64,16 @@ input[type=text] {
     text-align:center;
 }
 
+.navbar{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
 .container-fluid {
     background-color: #998888;
-
 }
 
 .navbar-inverse .navbar-text {
@@ -85,7 +96,7 @@ input[type=text] {
     color: #fff !important;
     background-color: transparent !important;
 }
-
+/* * /
 h3 {
     margin-right: 600px;
     color: #350505 !important;
@@ -112,4 +123,9 @@ h2 {
 p
 {
     color: #350505 !important;
+}
+/* */
+
+.not_logged_in {
+    display: none;
 }

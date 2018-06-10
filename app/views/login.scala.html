@@ -1,12 +1,17 @@
-@(loginForm : Form[User])
+@(loginForm: Form[User])
 @import helper._
 
-@main("Login"){
+@main("Login") {
 
     <h1>Login:</h1>
-    @helper.form(CSRF(routes.UserController.log_me_in())){
+    @helper.form(CSRF(routes.UserController.log_me_in())) {
         @helper.inputText(loginForm("email"))
         @helper.inputPassword(loginForm("password"))
         <input type="submit" class="btn btn-default" value="login"/>
     }
+
 }
+<div style="height: 60px;"></div>
+<div class="cntr">
+    <a href="@routes.UserController.create" class="btn btn-lg btn-secondary">Don't have an account? Register.</a>
+</div>
